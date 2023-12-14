@@ -20,7 +20,7 @@ const App = () => {
         </nav>
 
         <Routes>
-          <Route path="/profile" element={Profile} />
+          <Route path="/profile" element= {<Profile/>}  />
           <Route path="/" element={<Home onSave={(data) => { saveUserData(data); }} />} />
         </Routes>
       </div>
