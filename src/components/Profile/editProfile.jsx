@@ -1,32 +1,44 @@
 import React, { useState, useEffect } from 'react';
 
-const EditProfile = () => {
+const EditProfile = () =>
+{
   // State to hold the user data
+  const storedUser = localStorage.getItem('user');
+
+  // If user data exists, parse it and set the state
   const [userData, setUserData] = useState({
     fullName: '',
     sector: '',
   });
 
-  // Effect to run on component mount to fetch data from localStorage
-  useEffect(() => {
-    // Retrieve user data from localStorage
-    const storedUser = localStorage.getItem('user');
+  // State to hold the user ID
+  const [userId, setUserId] = useState(null);
 
-    // If user data exists, parse it and set the state
-    if (storedUser) {
+  // Effect to run on component mount to fetch data from localStorage
+  useEffect(() =>
+  {
+    // Retrieve user data from localStorage
+    if (storedUser)
+    {
       const user = JSON.parse(storedUser);
       setUserData(user);
+      setUserId(user._id);
     }
-  }, []); 
-  const handleInputChange = (e) => {
+  }, [storedUser]);
+
+  // Handler to update user data on input change
+  const handleInputChange = (e) =>
+  {
     const { name, value } = e.target;
     setUserData((prevData) => ({ ...prevData, [name]: value }));
   };
-const userId= 
+
   // Handler to submit the edited profile to the backend
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch(`https://dollartest.onrender.com/api/user/${userId}`, {
+  const handleSubmit = async () =>
+  {
+    try
+    {
+      const response = await fetch(`https://dollartest.onrender.com/api/user/edit/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -34,19 +46,18 @@ const userId=
         body: JSON.stringify(userData),
       });
 
-      if (response.ok) {
-        // Optionally, you can update the user data in localStorage after a successful edit
+      if (response.ok)
+      {
         localStorage.setItem('user', JSON.stringify(userData));
-
         console.log('Profile updated successfully:', userData);
-        // Handle success, show a success message, redirect, etc.
-      } else {
+        alert('Profile updated successfully')
+      } else
+      {
         console.error('Failed to update profile:', response.statusText);
-        // Handle error, show an error message, etc.
       }
-    } catch (error) {
+    } catch (error)
+    {
       console.error('Error updating profile:', error);
-      // Handle unexpected errors, show an error message, etc.
     }
   };
 
@@ -72,6 +83,7 @@ const userId=
       />
 
       <button onClick={handleSubmit}>Save Changes</button>
+      
     </div>
   );
 };

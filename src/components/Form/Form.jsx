@@ -34,6 +34,7 @@ const Form = () => {
         const data = await response.json();
         console.log('User created successfully:', data);
         localStorage.setItem('user', JSON.stringify(data.user))
+        alert('User created successfully')
       } else {
         console.error('Failed to create user:', response.statusText);
 const errorData = response.data;
