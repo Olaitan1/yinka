@@ -17,6 +17,7 @@ const EditProfile = () =>
   // Effect to run on component mount to fetch data from localStorage
   useEffect(() =>
   {
+    
     // Retrieve user data from localStorage
     if (storedUser)
     {
