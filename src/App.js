@@ -1,35 +1,30 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import Home from './views/Home';
-import Profile from './views/Profile';
-import { saveUserData, getUserData } from './services/api';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './view/Home';
+import Profile from '../src/components/Profile/profile';
+import { saveUserData } from './service/api';
 
 const App = () => {
   return (
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-            </ul>
-          </nav>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+          </ul>
+        </nav>
 
-          <Switch>
-            <Route path="/profile">
-              <Profile onSave={(data) => { saveUserData(data); }} />
-            </Route>
-            <Route path="/">
-              <Home onSave={(data) => { saveUserData(data); }} />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+        <Routes>
+          <Route path="/profile" element={Profile} />
+          <Route path="/" element={<Home onSave={(data) => { saveUserData(data); }} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
