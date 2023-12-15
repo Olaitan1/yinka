@@ -87,18 +87,19 @@ const errorData = response.data;
         selectedOption={sectors}
         onChange={(e) => setSectors(e.target.value)}
       />
-
-      <div>
-        <label htmlFor="agree">
-          <input
-            type="checkbox"
-            id="agree"
-            checked={agree}
-            onChange={() => setAgree(!agree)}
-          />
-          <span>Agree to terms</span>
-        </label>
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center' }}>
+        Agree to terms
+        <input
+          type="checkbox"
+          id="agree"
+          checked={agree}
+          onChange={() => setAgree(!agree)}
+        />
+        {/* <label htmlFor="agree" style={{ marginLeft: '5px' }}>Agree to terms</label> */}
       </div>
+
+
+
 
       <button onClick={handleSave}>Save</button>
     </div>
