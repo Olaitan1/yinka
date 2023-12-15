@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './editProfil.css';
 const EditProfile = () =>
 {
   // State to hold the user data
@@ -62,8 +62,9 @@ const EditProfile = () =>
     }
   };
 
+
   return (
-    <div>
+    <div className="edit-profile-container">
       <h2>Edit Profile</h2>
       <label htmlFor="fullName">Full Name:</label>
       <input
@@ -84,7 +85,6 @@ const EditProfile = () =>
       />
 
       <button onClick={handleSubmit}>Save Changes</button>
-      
     </div>
   );
 };

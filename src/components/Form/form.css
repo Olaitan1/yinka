@@ -37,3 +37,18 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 500px) {
+  .form-container {
+    padding: 50px;
+    width: 60%;
+  }
+}

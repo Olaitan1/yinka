@@ -15,13 +15,27 @@ const Profile = () =>
     };
 
     return (
-        <div>
-            <p>hi</p>
-            <p>Name: {user.fullName}</p>
-            <p>Sector: {user.sector}</p>
-            <button onClick={handleEditProfile}>Edit Profile</button>
+        <div style={{ textAlign: 'center', padding: '50px', backgroundColor: '#f2f2f2' }}>
+            <p style={{ fontSize: '24px', color: '#333' }}>Hi</p>
+            <p style={{ fontSize: '18px', color: '#555' }}>Name: {user.fullName}</p>
+            <p style={{ fontSize: '18px', color: '#555' }}>Sector: {user.sector}</p>
+            <button
+                style={{
+                    padding: '10px 20px',
+                    fontSize: '16px',
+                    backgroundColor: '0000ff',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                }}
+                onClick={handleEditProfile}
+            >
+                Edit Profile
+            </button>
         </div>
     );
+
 };
 
 export default Profile;

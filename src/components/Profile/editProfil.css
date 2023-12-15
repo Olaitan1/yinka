@@ -1,0 +1,16 @@
+.edit-profile-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 400px) {
+  .edit-profile-container {
+    padding: 10px;
+    border: 50px;
+  border-radius: 20px;
+  }
+}

@@ -21,7 +21,11 @@ const Form = () => {
       sector: sectors,
     };
 
-    try {
+    try
+    {
+      //clear localStorage before setting new data
+      localStorage.clear();
+
       const response = await fetch('https://dollartest.onrender.com/api/save-data', {
         method: 'POST',
         headers: {
