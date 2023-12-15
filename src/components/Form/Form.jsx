@@ -73,7 +73,16 @@ const errorData = response.data;
           { value: '', label: 'Select Sector' },
           { value: 'IT', label: 'Information Technology' },
           { value: 'Finance', label: 'Finance' },
-          // Add more sectors as needed
+          { value: 'Banking', label: 'Banking' },
+          { value: 'Education', label: 'Education' },
+          { value: 'Construction', label: 'Construction' },
+          { value: 'Mechanical', label: 'Mechanical' },
+          { value: 'CryptoCurrency', label: 'CryptoCurrency' },
+          { value: 'Printing', label: 'Printing' },
+          { value: 'Tourism', label: 'Tourism' },
+          { value: 'Furniture', label: 'Furniture' },
+          { value: 'Plastic & Rubber', label: 'Plastic & Rubber' },
+          { value: 'Others', label: 'Others' },
         ]}
         selectedOption={sectors}
         onChange={(e) => setSectors(e.target.value)}

@@ -10,14 +10,14 @@ const App = () => {
     <Router>
       <div>
         <nav>
-          <ul>
-            <li>
+          <div>
+            <div>
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </div>
+            <div>
               <Link to="/profile">Profile</Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </nav>
 
         <Routes>
